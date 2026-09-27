@@ -1,0 +1,42 @@
+---
+title: How notes follow your code
+description: How notes stay on the right line through edits, branch switches, pulls, renames and moves.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Notes aren't stored as "line 42". Each note remembers the code it's attached to: the line itself, the lines around
+it, and the class or function it's in. That's how it finds its line again after the code around it changes.
+
+## What notes survive
+
+- **Editing:** lines added or removed above a note move it along with its line.
+- **Reformatting and small changes** to the line itself.
+- **Moving code:** a method moved further down its class keeps its notes.
+- **Pulling changes and switching branches:** when a file changes on disk, each note looks for its code again.
+- **Renaming and moving files and folders** inside the IDE: the notes go with the file.
+
+## Notes on files that don't exist right now
+
+If a note's file is missing, for example because it only exists on another branch, the note waits. It's listed in
+the tool window as **file not found**, and appears in the editor again as soon as the file is back.
+
+## Orphaned notes
+
+When a note's code is gone, for example because the line or its whole method was deleted, the note becomes
+**orphaned**:
+
+- It's no longer shown in the editor.
+- It's kept, and listed in the tool window as **orphaned: code not found**.
+- If the code comes back, for example when you switch back to the branch it was on, the note comes back too.
+- You can delete an orphaned note from the tool window. You can't edit it until it's back on its line.
+
+<Aside title="Never on the wrong line">
+	When a note can't be sure where its code went, it becomes orphaned rather than attaching itself to a line that
+	merely looks similar. A missing note is easier to deal with than a note that's wrong.
+</Aside>
+
+## When a project has twin code
+
+If the same code appears twice, for example two methods with identical bodies, each note stays with the method it
+was written in.

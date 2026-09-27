@@ -1,0 +1,31 @@
+/* The plugin's colours: the ghost's purple as the accent. */
+:root {
+	--sl-color-accent-low: #231a47;
+	--sl-color-accent: #8b6cff;
+	--sl-color-accent-high: #d9cfff;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #e6e0ff;
+	--sl-color-accent: #6a4be0;
+	--sl-color-accent-high: #2b1a73;
+}
+
+/* Screenshots: a subtle frame so they stand out from the page. */
+.sl-markdown-content img[src*='screenshots'],
+.sl-markdown-content figure img {
+	border: 1px solid var(--sl-color-gray-5);
+	border-radius: 0.5rem;
+	box-shadow: var(--sl-shadow-md);
+}
+
+.sl-markdown-content figure {
+	margin-block: 1.5rem;
+}
+
+.sl-markdown-content figcaption {
+	margin-top: 0.5rem;
+	font-size: var(--sl-text-sm);
+	color: var(--sl-color-gray-3);
+	text-align: center;
+}

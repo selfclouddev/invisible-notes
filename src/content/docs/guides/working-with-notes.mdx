@@ -1,0 +1,60 @@
+---
+title: Working with notes
+description: Add, write, edit, delete and restore invisible notes.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+A note belongs to one line of code and is shown above it, in the editor only. The code keeps its line numbers,
+and the file on disk never changes.
+
+## Add a note
+
+Any of these opens a note field above the line:
+
+- Right-click in the code and choose **Add Invisible Note**. The note goes on the caret's line.
+- Right-click a line number (the gutter) and choose **Add Invisible Note**. The note goes on the line you clicked.
+- Press <kbd>Ctrl+Alt+Shift+Z</kbd> (<kbd>⌥⇧⌘Z</kbd> on macOS). The note goes on the caret's line.
+
+![The right-click menu on a line number, with Add Invisible Note highlighted](../../../assets/screenshots/2-add-a-note.png)
+
+## Write it
+
+| Key                      | What it does       |
+| ------------------------ | ------------------ |
+| <kbd>Enter</kbd>         | Saves the note     |
+| <kbd>Shift+Enter</kbd>   | Starts a new line  |
+| <kbd>Esc</kbd>           | Cancels            |
+
+The field stays open while you look around the code or other files, and keeps what you've typed until you save or
+cancel it.
+
+## Edit a note
+
+- Double-click the note.
+- Or right-click the note and choose **Edit Invisible Note**.
+- Or put the caret on the note's line and press <kbd>Ctrl+Alt+Shift+Z</kbd> (<kbd>⌥⇧⌘Z</kbd>): on a line that
+  already has a note, the menu item and the shortcut become **Edit Invisible Note**.
+
+## Delete a note
+
+- Right-click the note and choose **Delete Invisible Note**.
+- Or right-click the note's line (or its line number) and choose **Delete Invisible Note**. This item only appears on
+  lines that have a note.
+- Or edit the note, clear all its text and press <kbd>Enter</kbd>.
+- Or delete it from the [tool window](/invisible-notes/guides/finding-notes/#the-invisible-notes-tool-window).
+
+## Undo
+
+Deleting a note is an ordinary undoable step. Press <kbd>Ctrl+Z</kbd> (<kbd>⌘Z</kbd>) and the note comes back, on
+its line. **Edit → Undo Delete Invisible Note** shows it by name. <kbd>Ctrl+Shift+Z</kbd> (<kbd>⇧⌘Z</kbd>) deletes it
+again. This also works right after deleting a note in the tool window.
+
+<Aside>
+	Like the rest of the IDE's undo history, this lasts until you close the project.
+</Aside>
+
+## Which files can have notes
+
+Any file inside your project can have notes, whatever its language. Files outside the project, such as libraries or
+scratch files, can't. Neither can views that aren't a file, like diffs and consoles.

@@ -1,0 +1,49 @@
+---
+title: Where notes are stored
+description: Where Invisible Notes keeps your notes, how to back them up, and what removes them.
+---
+
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+Notes are stored on your computer, outside your project, in the folder JetBrains IDEs use for data they share:
+
+<Tabs syncKey="os">
+	<TabItem label="macOS">
+		```
+		~/Library/Application Support/JetBrains/InvisibleNotes/
+		```
+	</TabItem>
+	<TabItem label="Windows">
+		```
+		%APPDATA%\JetBrains\InvisibleNotes\
+		```
+	</TabItem>
+	<TabItem label="Linux">
+		```
+		~/.local/share/JetBrains/InvisibleNotes/
+		```
+	</TabItem>
+</Tabs>
+
+Each project has a folder in there, holding its notes in a `notes.json` file.
+
+## What keeps your notes
+
+- **Invalidate Caches, IDE updates and reinstalling the IDE** don't touch this folder.
+- **Uninstalling the plugin** doesn't delete your notes.
+- **Several JetBrains IDEs** open on the same project share its notes. If two of them save notes at the same time,
+  both sets of changes are kept.
+
+## Backing up
+
+Copy the `InvisibleNotes` folder. To restore your notes, put it back while the IDE is closed.
+
+## What notes aren't part of
+
+Notes never go into your project's files, so they're never committed, never pushed and never shared with your team.
+They're yours, on this computer.
+
+<Aside type="caution" title="Moving the project folder">
+	Notes belong to the project at its current location. If you move or rename the project's own folder, the IDE sees
+	a new project and starts without notes. The old notes stay on disk, in their folder.
+</Aside>

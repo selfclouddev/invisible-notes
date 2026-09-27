@@ -1,0 +1,75 @@
+---
+title: Invisible Notes
+description: Private notes on lines of code for PhpStorm and other JetBrains IDEs. Shown in the editor, never written into your files or version control.
+template: splash
+hero:
+  tagline: Private notes on lines of code that are never written into your files.
+  image:
+    file: ../../assets/logo.svg
+    alt: Invisible Notes logo, a ghost between curly braces
+  actions:
+    - text: Get started
+      link: /invisible-notes/getting-started/installation/
+      icon: right-arrow
+    - text: See how it works
+      link: /invisible-notes/guides/working-with-notes/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+Invisible Notes shows your notes in the editor, between the lines of code, while the file itself stays untouched:
+there is nothing to commit and nothing for version control to pick up. Use them to record what you worked out while
+reading unfamiliar code, to leave yourself reminders, or to keep questions for later.
+
+![PhpStorm with three invisible notes between the lines of a PHP class](../../assets/screenshots/1-notes-in-the-editor.png)
+
+## What it does
+
+<CardGrid>
+	<Card title="Notes in the editor" icon="pencil">
+		Right-click a line and choose **Add Invisible Note**, or press <kbd>Ctrl+Alt+Shift+Z</kbd>
+		(<kbd>⌥⇧⌘Z</kbd> on macOS). The note appears above the line, and the file doesn't change.
+	</Card>
+	<Card title="Notes follow the code" icon="code-branch">
+		A note stays with its line when you edit, reformat, pull changes or switch branches, and when files are
+		renamed or moved.
+	</Card>
+	<Card title="See where the notes are" icon="magnifier">
+		Each note has a mark next to the scrollbar, and the editor's top-right corner shows how many notes the file
+		has.
+	</Card>
+	<Card title="All notes in one place" icon="list-format">
+		The Invisible Notes tool window lists the notes of the current file or of the whole project. Click one to
+		jump to it.
+	</Card>
+	<Card title="Undo" icon="approve-check">
+		Deleted a note by mistake? Undo brings it back, like any other edit.
+	</Card>
+	<Card title="Stored on your computer" icon="padlock">
+		Notes are kept locally, outside the project, and are never sent anywhere. Clearing the IDE caches doesn't
+		remove them.
+	</Card>
+</CardGrid>
+
+## Take a look
+
+![The right-click menu on a line number, with Add Invisible Note highlighted](../../assets/screenshots/2-add-a-note.png)
+
+![Writing a note inline, above the line it belongs to](../../assets/screenshots/3-write-a-note.png)
+
+![The Invisible Notes tool window listing notes from three files](../../assets/screenshots/4-all-notes-in-one-place.png)
+
+## Try it
+
+Invisible Notes is sold through JetBrains Marketplace, with a free 30-day trial. It works in PhpStorm 2025.1 and
+newer, and in other JetBrains IDEs from version 2025.1.
+
+<CardGrid>
+	<Card title="Install it" icon="rocket">
+		[Installation](/invisible-notes/getting-started/installation/) takes a minute, from inside the IDE.
+	</Card>
+	<Card title="Pricing and trial" icon="star">
+		How the [trial and licenses](/invisible-notes/licensing/pricing/) work.
+	</Card>
+</CardGrid>

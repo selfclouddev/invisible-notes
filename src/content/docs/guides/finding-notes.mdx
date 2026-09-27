@@ -1,0 +1,45 @@
+---
+title: Finding your notes
+description: The scrollbar marks, the note count in the editor's corner and the Invisible Notes tool window.
+---
+
+## Marks next to the scrollbar
+
+Each note has a small purple mark next to the editor's scrollbar, where the IDE also shows errors and warnings.
+
+- Hover over a mark to read the note's first line.
+- Click a mark to jump to the note.
+
+## The count in the editor's corner
+
+The editor's top-right corner, next to the error and warning counts, shows a ghost with the number of notes in the
+file. It's hidden when the file has no notes.
+
+- Hover over it to see how many notes the file has.
+- Click it to open the **Invisible Notes** tool window on the notes of this file.
+
+![The editor with three notes, the purple marks next to the scrollbar and the note count in the top-right corner](../../../assets/screenshots/1-notes-in-the-editor.png)
+
+## The Invisible Notes tool window
+
+Open it with the ghost button on the side of the IDE window, or with **View → Tool Windows → Invisible Notes**. It
+has two tabs:
+
+- **Current File:** the notes of the file in the editor. It follows you as you switch files.
+- **All Files:** every note of the project, grouped by file.
+
+In the list:
+
+- Click a note to open its file at the note's line. Double-click it, or press <kbd>Enter</kbd>, to also move the
+  focus to the editor.
+- Right-click a note for **Go to Note**, **Edit Invisible Note** and **Delete Invisible Note**.
+- Each note shows its line number and its first line.
+
+![The Invisible Notes tool window on the All Files tab](../../../assets/screenshots/4-all-notes-in-one-place.png)
+
+Two kinds of notes are marked in the list:
+
+- **orphaned: code not found**: the code the note belonged to has gone. See
+  [Orphaned notes](/invisible-notes/guides/following-code/#orphaned-notes).
+- **file not found**: the note's file doesn't exist right now, for example on another branch. The note comes back
+  when the file does.

@@ -1,0 +1,48 @@
+---
+title: FAQ
+description: Common questions about Invisible Notes.
+---
+
+## Do notes change my files?
+
+No. Notes are only drawn in the editor. The file on disk, and so your version control, never sees them. Even the
+line numbers stay the same.
+
+## Can my team see my notes?
+
+No. Notes are stored on your computer only, outside the project, so they're never committed or pushed. See
+[Where notes are stored](/invisible-notes/guides/storage/).
+
+## Does Invisible Notes send my notes anywhere?
+
+No. The plugin makes no network connections. The only online part is the license check, which the IDE does with
+JetBrains. See [Privacy](/invisible-notes/licensing/privacy/).
+
+## What happens when I switch branches?
+
+Notes look for their code again. They stay with it if it moved, wait if their file doesn't exist on this branch, and
+come back when you switch back. See [How notes follow your code](/invisible-notes/guides/following-code/).
+
+## A note disappeared from the editor. Where did it go?
+
+Its code was probably deleted or changed beyond recognition, so the note is now orphaned. Open the Invisible Notes
+tool window, **All Files** tab: it's listed there as **orphaned: code not found**. It returns if its code does, and you
+can delete it from there.
+
+## I deleted a note by mistake.
+
+Press <kbd>Ctrl+Z</kbd> (<kbd>⌘Z</kbd> on macOS) straight away. The note comes back.
+
+## Does it work with languages other than PHP?
+
+Yes. Notes work in any file of your project. In languages the IDE understands, notes also use the surrounding class
+and function to find their line after bigger changes.
+
+## Which IDEs does it support?
+
+PhpStorm 2025.1 and newer, and other JetBrains IDEs from version 2025.1, such as IntelliJ IDEA and WebStorm.
+
+## Can I use it after the trial ends?
+
+With a license, yes. Without one, the IDE switches the plugin off. Your notes stay on disk, and reappear when you
+activate a license. See [Pricing and trial](/invisible-notes/licensing/pricing/).

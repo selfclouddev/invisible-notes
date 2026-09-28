@@ -11,8 +11,18 @@
 	--sl-color-accent-high: #2b1a73;
 }
 
-/* Screenshots: a subtle frame so they stand out from the page. */
+/* The video on the home page: full width, framed like the screenshots. */
+.sl-markdown-content video {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	background: #121316;
+}
+
+/* Screenshots and the video: a subtle frame so they stand out from the page. */
 .sl-markdown-content img[src*='screenshots'],
+.sl-markdown-content video,
 .sl-markdown-content figure img {
 	border: 1px solid var(--sl-color-gray-5);
 	border-radius: 0.5rem;

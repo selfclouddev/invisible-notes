@@ -1,6 +1,6 @@
 ---
 title: Working with notes
-description: Add, write, edit, delete and restore invisible notes.
+description: Add, write, edit, delete and restore invisible notes, one at a time or all at once.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -44,11 +44,34 @@ cancel it.
 - Or edit the note, clear all its text and press <kbd>Enter</kbd>.
 - Or delete it from the [tool window](/invisible-notes/guides/finding-notes/#the-invisible-notes-tool-window).
 
+## Delete all notes at once
+
+To delete every note of a file:
+
+- Right-click in the file, or on one of its line numbers, and choose **Delete All Invisible Notes in File**. This
+  item only appears in files that have notes.
+- Or click the trash button on the **Current File** tab of the
+  [tool window](/invisible-notes/guides/finding-notes/#the-invisible-notes-tool-window).
+- Or, in the tool window, right-click the file or one of its notes and choose
+  **Delete All Invisible Notes in File**.
+
+To delete every note of the project:
+
+- Click the trash button on the **All Files** tab of the tool window.
+- Or open Find Action (<kbd>Ctrl+Shift+A</kbd>, or <kbd>⇧⌘A</kbd> on macOS) and choose
+  **Delete All Invisible Notes in Project**.
+
+You're asked first, and told how many notes will be deleted. That includes
+[orphaned notes](/invisible-notes/guides/following-code/#orphaned-notes), which the editor doesn't show, and, for
+the whole project, notes of files that don't exist right now.
+
 ## Undo
 
 Deleting a note is an ordinary undoable step. Press <kbd>Ctrl+Z</kbd> (<kbd>⌘Z</kbd>) and the note comes back, on
 its line. **Edit → Undo Delete Invisible Note** shows it by name. <kbd>Ctrl+Shift+Z</kbd> (<kbd>⇧⌘Z</kbd>) deletes it
 again. This also works right after deleting a note in the tool window.
+
+Deleting all notes of a file or of the project is one step, too: one Undo brings every one of them back.
 
 <Aside>
 	Like the rest of the IDE's undo history, this lasts until you close the project.

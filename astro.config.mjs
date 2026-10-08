@@ -32,6 +32,7 @@ export default defineConfig({
 						{ label: 'Finding your notes', slug: 'guides/finding-notes' },
 						{ label: 'How notes follow your code', slug: 'guides/following-code' },
 						{ label: 'Where notes are stored', slug: 'guides/storage' },
+						{ label: 'Notes for AI tools', slug: 'guides/ai-tools' },
 					],
 				},
 				{

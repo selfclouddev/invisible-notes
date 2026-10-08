@@ -1,6 +1,6 @@
 ---
 title: Where notes are stored
-description: Where Invisible Notes keeps your notes, how to back them up, and what removes them.
+description: Where Invisible Notes keeps your notes, how a moved project finds them, how to back them up, and what removes them.
 ---
 
 import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
@@ -25,7 +25,8 @@ Notes are stored on your computer, outside your project, in the folder JetBrains
 	</TabItem>
 </Tabs>
 
-Each project has a folder in there, holding its notes in a `notes.json` file.
+Each project has a folder in there. It holds the notes in a `notes.json` file, and a `project.json` that says which
+project the folder belongs to: its name and where it is.
 
 ## What keeps your notes
 
@@ -33,6 +34,26 @@ Each project has a folder in there, holding its notes in a `notes.json` file.
 - **Uninstalling the plugin** doesn't delete your notes.
 - **Several JetBrains IDEs** open on the same project share its notes. If two of them save notes at the same time,
   both sets of changes are kept.
+- **Moving or renaming the project's folder** keeps the notes with the project.
+
+## Moving, renaming and copying a project
+
+A project knows its notes by an id. The IDE keeps that id in the project's `.idea/workspace.xml`, the file for your
+own settings of the project, which the IDE itself leaves out of version control. That one line is all Invisible
+Notes ever writes inside a project.
+
+- **Move or rename the project's folder:** the id goes with it, so the project finds its notes in the new place.
+- **Copy the project's folder:** the copy starts with a copy of the notes. From then on, the two have notes of
+  their own.
+- **Delete `.idea`:** as long as the project is where it was, it finds its notes by its location.
+
+<Aside type="caution" title="Deleting .idea and moving the project">
+	A project that lost its `.idea` folder and was also moved can't be told from a new one, and starts without notes.
+	The notes are still on disk. To get them back, close the IDE and look at the `project.json` files to find the
+	project's old folder and its new one. Then copy `notes.json` from the old folder into the new one.
+</Aside>
+
+Notes written with version 1.0.0 are found without you doing anything.
 
 ## Backing up
 
@@ -43,7 +64,5 @@ Copy the `InvisibleNotes` folder. To restore your notes, put it back while the I
 Notes never go into your project's files, so they're never committed, never pushed and never shared with your team.
 They're yours, on this computer.
 
-<Aside type="caution" title="Moving the project folder">
-	Notes belong to the project at its current location. If you move or rename the project's own folder, the IDE sees
-	a new project and starts without notes. The old notes stay on disk, in their folder.
-</Aside>
+The one way they leave it is an AI tool that works with your IDE: it can read your notes and sends what it reads
+to its AI service. See [Notes for AI tools](/invisible-notes/guides/ai-tools/).

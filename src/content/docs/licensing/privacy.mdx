@@ -3,7 +3,7 @@ title: Privacy
 description: What Invisible Notes and this website do, and don't do, with your data.
 ---
 
-_Last updated: 27 September 2026_
+_Last updated: 8 October 2026_
 
 ## The plugin
 
@@ -14,6 +14,21 @@ _Last updated: 27 September 2026_
 - **Licensing is done by the IDE and JetBrains.** When you start the trial or activate a license, the IDE checks it
   with JetBrains, using your JetBrains Account. JetBrains processes that data under the
   [JetBrains Privacy Policy](https://www.jetbrains.com/legal/docs/privacy/privacy/).
+
+## AI tools
+
+Since version 1.4.0, Invisible Notes adds tools to the MCP server that JetBrains IDEs have from version 2025.2. An
+AI tool connected to that server can read, add, change and delete your notes. See
+[Notes for AI tools](/invisible-notes/guides/ai-tools/).
+
+- **You decide which AI tools work with your IDE.** For an AI tool outside the IDE, the MCP server is off until you
+  turn it on and connect the tool. AI agents that run inside the IDE, such as the ones of JetBrains AI Assistant,
+  may be given the same tools without that setting.
+- **A connected AI tool has access to all your notes** in the projects you open, and what it reads is sent to the AI
+  service behind it. That service handles the data under its own terms and privacy policy, not this one.
+- **The plugin itself still sends nothing.** It hands the notes to the AI tool inside your IDE; the connection to
+  the AI service is the tool's.
+- **You're told.** The first time an AI tool uses your notes, the IDE shows a notice.
 
 ## Purchases
 

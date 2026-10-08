@@ -18,10 +18,27 @@ No. Notes are stored on your computer only, outside the project, so they're neve
 No. The plugin makes no network connections. The only online part is the license check, which the IDE does with
 JetBrains. See [Privacy](/invisible-notes/licensing/privacy/).
 
+Notes can leave your computer in one way: an AI tool that works with your IDE can read them. See the next
+question.
+
+## Can an AI tool read or change my notes?
+
+Only one that works with your IDE. In IDE version 2025.2 or newer, an AI tool connected to the IDE's MCP server can
+read, add, change and delete all invisible notes of the projects you open, and what it reads is sent to the AI
+service behind it. That's how you get an AI tool to explain or review code with notes.
+
+For AI tools outside the IDE, the MCP server is off until you turn it on. AI agents that run inside the IDE may be
+given the same tools without that. See [Notes for AI tools](/invisible-notes/guides/ai-tools/).
+
 ## What happens when I switch branches?
 
 Notes look for their code again. They stay with it if it moved, wait if their file doesn't exist on this branch, and
 come back when you switch back. See [How notes follow your code](/invisible-notes/guides/following-code/).
+
+## What happens when I move or rename the project's folder?
+
+The notes stay with the project. See
+[Moving, renaming and copying a project](/invisible-notes/guides/storage/#moving-renaming-and-copying-a-project).
 
 ## A note disappeared from the editor. Where did it go?
 
@@ -33,6 +50,12 @@ can delete it from there.
 
 Press <kbd>Ctrl+Z</kbd> (<kbd>⌘Z</kbd> on macOS) straight away. The note comes back.
 
+## How do I delete all notes of a file, or all of them?
+
+With the trash button in the Invisible Notes tool window, or **Delete All Invisible Notes in File** in the editor's
+right-click menu. You're asked first, and Undo brings the notes back. See
+[Delete all notes at once](/invisible-notes/guides/working-with-notes/#delete-all-notes-at-once).
+
 ## Does it work with languages other than PHP?
 
 Yes. Notes work in any file of your project. In languages the IDE understands, notes also use the surrounding class
@@ -41,6 +64,7 @@ and function to find their line after bigger changes.
 ## Which IDEs does it support?
 
 PhpStorm 2025.1 and newer, and other JetBrains IDEs from version 2025.1, such as IntelliJ IDEA and WebStorm.
+[Notes for AI tools](/invisible-notes/guides/ai-tools/) need version 2025.2 or newer.
 
 ## Can I use it after the trial ends?
 

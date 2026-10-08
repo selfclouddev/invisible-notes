@@ -1,0 +1,110 @@
+---
+title: Notes for AI tools
+description: Let an AI tool connected to your IDE explain or review code by adding invisible notes, and what that gives it access to.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+An AI tool connected to your IDE can work with your invisible notes: read them, add new ones, change them and delete
+them. Ask it to explain or review code, and its remarks appear as notes next to the code, not as changes to your
+files.
+
+<Aside type="caution" title="What you give an AI tool access to">
+	An AI tool connected to the IDE's MCP server can read, add, change and delete **all** invisible notes of the
+	projects you open, and what it reads is sent to the AI service behind it. If your notes hold something you
+	wouldn't paste into that AI tool yourself, delete those notes first, or don't connect the tool.
+</Aside>
+
+## What you need
+
+- A JetBrains IDE, version **2025.2 or newer**. These IDEs have an MCP server built in, and Invisible Notes adds its
+  tools to it. In 2025.1 everything else in Invisible Notes works, but AI tools can't reach the notes.
+- An AI tool that can connect to an MCP server, such as Claude Code or Cursor.
+
+## Set it up
+
+<Steps>
+
+1. Open **Settings → Tools → MCP Server** and turn on **Enable MCP Server**.
+
+2. Under **Clients Auto-Configuration**, click **Auto-Configure** next to your AI tool. If your tool isn't listed,
+   copy the configuration under **Manual Client Configuration** and add it to the tool yourself.
+
+3. Restart the AI tool, so that it finds the IDE.
+
+</Steps>
+
+The MCP server is part of the IDE, not of Invisible Notes. Once it's on, a connected tool can use everything the
+IDE offers through it, such as reading files and searching the project. The invisible notes are four tools among
+those.
+
+<Aside title="AI agents inside the IDE">
+	The steps above are for AI tools that run outside the IDE; for those, the MCP server is off until you turn it on.
+	AI agents that run inside the IDE, such as the ones of JetBrains AI Assistant, may be given the IDE's tools without
+	that setting. If you use them, assume they can use your invisible notes too.
+</Aside>
+
+## What to ask for
+
+Say what you want, and that you want it as invisible notes:
+
+- *"Explain how `InvoiceCalculator.php` works. Don't change the file: add invisible notes."*
+- *"Review the files in `src/Billing` and leave your remarks as invisible notes on the lines they're about."*
+- *"Read my invisible notes in this file and answer the questions in them."*
+- *"Remove the invisible notes you added."*
+
+A note the AI tool adds appears in the editor right away, above its line. From then on it's a note like any other:
+it [follows the code](/invisible-notes/guides/following-code/), is listed in the
+[tool window](/invisible-notes/guides/finding-notes/#the-invisible-notes-tool-window), and you can edit or delete it.
+
+The first time an AI tool uses your notes, the IDE shows a notice that says so.
+
+## The tools
+
+| Tool                    | What it does                                                                      |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| `list_invisible_notes`  | Lists the notes of a file or of the project: file, line, the code there, the text |
+| `add_invisible_note`    | Adds a note to one line of a file                                                 |
+| `update_invisible_note` | Replaces the text of a note                                                       |
+| `delete_invisible_note` | Deletes a note                                                                    |
+
+You don't call these yourself. The AI tool picks them when your request is about invisible notes.
+
+## How a note gets on the right line
+
+AI tools often miscount lines, and a file can change after the tool has read it. So when it adds a note, the tool
+gives the line number and the code it read on that line:
+
+- If the line holds that code, the note goes there.
+- If it doesn't, the note goes to the line that does hold it: the only such line, or the one clearly nearest to the
+  number. The tool is told.
+- If the code isn't in the file, or it isn't clear which of several lines is meant, nothing is added. The tool is
+  told what is on the line, so it can try again.
+
+## What an AI tool can and can't do
+
+- **Notes only.** These tools never change a file. Other tools of the IDE's MCP server can; they aren't part of
+  Invisible Notes.
+- **One note per line.** If a line already has a note, nothing is added. The tool is told what that note says, and
+  can change it or choose another line.
+- **Only files of the project.** A note can't be put on a file outside it.
+- **License.** The tools come with the plugin, so they need an Invisible Notes license or a running trial, like
+  the rest of it.
+- **Undo.** A note the AI tool deleted comes back with <kbd>Ctrl+Z</kbd> (<kbd>⌘Z</kbd>), like one you deleted
+  yourself.
+
+## Cleaning up
+
+After an explanation or a review, a file can hold many notes. To remove them:
+
+- Ask the AI tool to remove the notes it added.
+- Or [delete all notes of the file](/invisible-notes/guides/working-with-notes/#delete-all-notes-at-once) in one
+  step. That includes your own notes in that file.
+
+## Turning it off
+
+Turn off **Enable MCP Server** in **Settings → Tools → MCP Server**. AI tools outside the IDE can then no longer
+reach the IDE, or your notes.
+
+PhpStorm 2026.2 also has an **Exposed Tools** page there, where each tool can be turned off. Turn off the four
+tools above, and the MCP server no longer offers them, while the rest of it keeps working.

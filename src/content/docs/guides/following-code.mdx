@@ -1,6 +1,6 @@
 ---
 title: How notes follow your code
-description: How notes stay on the right line through edits, branch switches, pulls, renames and moves.
+description: How notes stay on the right line through edits, branch switches, pulls, renames and moves, and stay with a project that is moved.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -15,6 +15,8 @@ it, and the class or function it's in. That's how it finds its line again after 
 - **Moving code:** a method moved further down its class keeps its notes.
 - **Pulling changes and switching branches:** when a file changes on disk, each note looks for its code again.
 - **Renaming and moving files and folders** inside the IDE: the notes go with the file.
+- **Moving or renaming the project's own folder:** the notes stay with the project. See
+  [Moving, renaming and copying a project](/invisible-notes/guides/storage/#moving-renaming-and-copying-a-project).
 
 ## Notes on files that don't exist right now
 

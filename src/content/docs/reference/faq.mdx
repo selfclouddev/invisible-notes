@@ -1,7 +1,20 @@
 ---
 title: FAQ
-description: Common questions about Invisible Notes.
+description: "Common questions about Invisible Notes: what it is, whether notes change your files, who can see them, which IDEs and languages it works with, and what it costs."
 ---
+
+## What is Invisible Notes?
+
+A plugin for JetBrains IDEs, such as PhpStorm, IntelliJ IDEA, WebStorm and PyCharm, for private notes on lines of
+code. A note is shown in the editor, above its line, and is never written into the file. See
+[What Invisible Notes is for](/invisible-notes/getting-started/what-its-for/).
+
+## How is a note different from a code comment or a TODO comment?
+
+A comment is part of the file: it's committed with it, and everyone who has the code reads it. An invisible note
+changes no file, so it can't be committed and only you see it. For a comparison with bookmarks, scratch files and
+review comments too, see
+[How it differs from other ways to keep notes](/invisible-notes/getting-started/what-its-for/#how-it-differs-from-other-ways-to-keep-notes).
 
 ## Do notes change my files?
 
@@ -12,6 +25,11 @@ line numbers stay the same.
 
 No. Notes are stored on your computer only, outside the project, so they're never committed or pushed. See
 [Where notes are stored](/invisible-notes/guides/storage/).
+
+## Can I share notes with my team, or sync them between computers?
+
+No. Notes are for you, on one computer. For remarks your team should read, use code comments or review comments.
+To take your notes to another computer, [copy their folder](/invisible-notes/guides/storage/#backing-up).
 
 ## Does Invisible Notes send my notes anywhere?
 
@@ -29,10 +47,22 @@ all invisible notes of the projects you open, and what it reads is sent to the A
 For AI tools outside the IDE, the MCP server is off until you turn it on. AI agents that run inside the IDE may be
 given the same tools without that. See [Notes for AI tools](/invisible-notes/guides/ai-tools/).
 
+## What happens to a note when the code around it changes?
+
+It stays with its code. A note isn't tied to a line number: it remembers its line, the lines around it, and the
+class or function it's in, and finds its line again after edits, reformatting or a pull. See
+[How notes follow your code](/invisible-notes/guides/following-code/).
+
 ## What happens when I switch branches?
 
 Notes look for their code again. They stay with it if it moved, wait if their file doesn't exist on this branch, and
 come back when you switch back. See [How notes follow your code](/invisible-notes/guides/following-code/).
+
+## Do I see my notes when I review my changes before a commit?
+
+Yes, from version 1.4.1. A diff shows the notes next to the file as it is now. They're only shown there: they aren't
+part of the changes, and a button on the diff's toolbar hides them. See
+[Notes in diff views](/invisible-notes/guides/diff-views/).
 
 ## What happens when I move or rename the project's folder?
 
@@ -57,12 +87,20 @@ right-click menu. You're asked first, and Undo brings the notes back. See
 
 ## Does it work with languages other than PHP?
 
-Yes. Notes work in any file of your project. In languages the IDE understands, notes also use the surrounding class
-and function to find their line after bigger changes.
+Yes. Notes work in any file of your project, whatever its language: Java, Kotlin, JavaScript, TypeScript, Python,
+Go, Ruby, C#, C++, Rust, SQL, HTML, CSS and the rest. In languages the IDE understands, notes also use the
+surrounding class and function to find their line after bigger changes.
 
 ## Which IDEs does it support?
 
-PhpStorm 2025.2 and newer, and other JetBrains IDEs from version 2025.2, such as IntelliJ IDEA and WebStorm.
+JetBrains IDEs from version 2025.2. Invisible Notes is developed and tested in PhpStorm. It uses only what all
+JetBrains IDEs have in common, and JetBrains Marketplace offers it for IntelliJ IDEA, WebStorm, PyCharm, GoLand,
+RubyMine, CLion, Rider, RustRover, DataGrip and DataSpell as well. If something doesn't work in your IDE, write to
+[florin@selfcloud.ro](mailto:florin@selfcloud.ro).
+
+## Does it work in VS Code or other editors?
+
+No. Invisible Notes is a plugin for JetBrains IDEs only.
 
 In 2025.1 you get Invisible Notes 1.0.0. It has the notes, the scrollbar marks, the tool window and undo, but not
 what was added in later versions: see the [release notes](/invisible-notes/reference/release-notes/).
@@ -74,6 +112,11 @@ ends the trials that are running. On the license screen, choose **Start trial**:
 
 If you've bought a license and the IDE doesn't accept it after an update, write to
 [florin@selfcloud.ro](mailto:florin@selfcloud.ro).
+
+## How much does it cost?
+
+It's a subscription with a free 30-day trial, paid monthly or yearly through JetBrains Marketplace. See
+[Pricing and trial](/invisible-notes/licensing/pricing/) for the prices.
 
 ## Can I use it after the trial ends?
 

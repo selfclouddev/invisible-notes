@@ -1,8 +1,9 @@
 ---
-title: Invisible Notes
-description: Private notes on lines of code for PhpStorm and other JetBrains IDEs. Shown in the editor, never written into your files or version control.
+title: Private notes on lines of code for JetBrains IDEs
+description: Invisible Notes is a plugin for PhpStorm, IntelliJ IDEA, WebStorm, PyCharm and other JetBrains IDEs. Private notes above lines of code, never written into your files or version control.
 template: splash
 hero:
+  title: Invisible Notes
   tagline: Private notes on lines of code that are never written into your files.
   image:
     file: ../../assets/logo.svg
@@ -14,13 +15,19 @@ hero:
     - text: See how it works
       link: /invisible-notes/guides/working-with-notes/
       variant: minimal
+    - text: JetBrains Marketplace
+      link: https://plugins.jetbrains.com/plugin/34596-invisible-notes
+      icon: external
+      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-Invisible Notes shows your notes in the editor, between the lines of code, while the file itself stays untouched:
-there is nothing to commit and nothing for version control to pick up. Use them to record what you worked out while
-reading unfamiliar code, to leave yourself reminders, or to keep questions for later.
+Invisible Notes is a plugin for PhpStorm, IntelliJ IDEA, WebStorm, PyCharm and other JetBrains IDEs. It shows your
+notes in the editor, between the lines of code, while the file itself stays untouched: there is nothing to commit
+and nothing for version control to pick up. They work like comments that only you can see. Use them to record what
+you worked out while reading unfamiliar code, to leave yourself reminders, or to keep questions for later. See
+[what it's for](/invisible-notes/getting-started/what-its-for/), and when something else fits better.
 
 <video controls playsInline preload="metadata" poster="/invisible-notes/video/invisible-notes-poster.jpg" aria-label="Invisible Notes in PhpStorm: adding a note, notes following the code, finding and restoring notes">
 	<source src="/invisible-notes/video/invisible-notes.mp4" type="video/mp4" />
@@ -35,22 +42,24 @@ reading unfamiliar code, to leave yourself reminders, or to keep questions for l
 		(<kbd>⌥⇧⌘Z</kbd> on macOS). The note appears above the line, and the file doesn't change.
 	</Card>
 	<Card title="Notes follow the code" icon="code-branch">
-		A note stays with its line when you edit, reformat, pull changes or switch branches, and when files are
-		renamed or moved.
+		A note isn't tied to a line number. It stays with its line when you edit, reformat, pull changes or switch
+		branches, and when files are renamed or moved.
 	</Card>
 	<Card title="See where the notes are" icon="magnifier">
 		Each note has a mark next to the scrollbar, and the editor's top-right corner shows how many notes the file
 		has.
 	</Card>
+	<Card title="There when you review your changes" icon="document">
+		Notes also appear in [diff views](/invisible-notes/guides/diff-views/), such as the changes you're about to
+		commit. They're only shown there, and they aren't part of the changes.
+	</Card>
 	<Card title="All notes in one place" icon="list-format">
 		The Invisible Notes tool window lists the notes of the current file or of the whole project. Click one to
 		jump to it.
 	</Card>
-	<Card title="Delete them all at once" icon="close">
-		Delete every note of a file, or of the whole project, in one step. You're asked first.
-	</Card>
-	<Card title="Undo" icon="approve-check">
-		Deleted a note by mistake? Undo brings it back, like any other edit. That goes for deleting them all, too.
+	<Card title="Delete them all at once, and undo" icon="approve-check">
+		Delete every note of a file, or of the whole project, in one step. You're asked first. Deleted a note by
+		mistake? Undo brings it back, like any other edit. That goes for deleting them all, too.
 	</Card>
 	<Card title="Notes for AI tools" icon="puzzle">
 		An AI tool connected to your IDE can explain or review code by adding notes next to it, without changing
@@ -72,11 +81,14 @@ reading unfamiliar code, to leave yourself reminders, or to keep questions for l
 
 ![The Invisible Notes tool window listing notes from three files](../../assets/screenshots/4-all-notes-in-one-place.png)
 
+![A side-by-side diff with invisible notes next to the current version of the file](../../assets/screenshots/5-notes-in-a-diff.png)
+
 ## Try it
 
-Invisible Notes is sold through JetBrains Marketplace, with a free 30-day trial. It works in PhpStorm 2025.2 and
-newer, and in other JetBrains IDEs from version 2025.2. In 2025.1 you get version 1.0.0, which has the notes but
-not what was added since.
+Invisible Notes is sold through [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/34596-invisible-notes), with a free 30-day trial. It works in PhpStorm
+2025.2 and newer, and in other JetBrains IDEs from version 2025.2, such as IntelliJ IDEA, WebStorm, PyCharm, GoLand,
+RubyMine, CLion, Rider and RustRover. In 2025.1 you get version 1.0.0, which has the notes but not what was added
+since.
 
 <CardGrid>
 	<Card title="Install it" icon="rocket">

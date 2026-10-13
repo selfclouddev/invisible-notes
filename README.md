@@ -1,9 +1,11 @@
 # Invisible Notes
 
-Private notes on lines of code for PhpStorm and other JetBrains IDEs. Notes appear inline in the editor, follow the
-code through edits, branch switches and file moves, and are never written into your files or version control.
+Invisible Notes is a plugin for PhpStorm, IntelliJ IDEA, WebStorm, PyCharm and other JetBrains IDEs, for private
+notes on lines of code. Notes appear inline in the editor, follow the code through edits, branch switches and file
+moves, and are never written into your files or version control.
 
-**Website and documentation: https://selfclouddev.github.io/invisible-notes/**
+- **Website and documentation: https://selfclouddev.github.io/invisible-notes/**
+- **Get it: [Invisible Notes on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/34596-invisible-notes)** (paid, with a free 30-day trial)
 
 ![PhpStorm with three invisible notes between the lines of a PHP class](src/assets/screenshots/1-notes-in-the-editor.png)
 

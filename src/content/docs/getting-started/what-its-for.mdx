@@ -1,0 +1,59 @@
+---
+title: What Invisible Notes is for
+description: What Invisible Notes does, what people use it for, how it differs from code comments, TODO comments, bookmarks and a notes file, and when something else fits better.
+---
+
+Invisible Notes is a plugin for JetBrains IDEs, such as PhpStorm, IntelliJ IDEA, WebStorm and PyCharm. It lets you
+put private notes on lines of code. A note is shown in the editor, above its line, but it's never written into the
+file: there's nothing to commit, and nobody else sees it.
+
+## What people use it for
+
+- **Learning a codebase.** Write down what a piece of code does on the line where you found out, while you read
+  legacy code or a project you've just joined.
+- **Reminders and to-dos of your own,** which shouldn't end up in the repository as TODO comments.
+- **Preparing a review, a refactoring or a bug fix.** Mark the places and what you think about them first, and
+  change the code later.
+- **Repositories where your remarks don't belong in the files,** such as a client's code or a shared codebase with
+  rules about comments.
+- **Questions for a colleague,** kept on the line they're about until you get to ask them.
+- **Explanations and reviews by an AI tool,** placed next to the code, with no file changed. See
+  [Notes for AI tools](/invisible-notes/guides/ai-tools/).
+
+## How it differs from other ways to keep notes
+
+|                                  | Who sees it               | Changes your files | Where you read it                                             |
+| -------------------------------- | ------------------------- | ------------------ | ------------------------------------------------------------- |
+| **Invisible note**               | Only you                  | No                 | In the editor, above its line                                 |
+| **Code comment or TODO comment** | Everyone who has the code | Yes                | In the file                                                   |
+| **Bookmark**                     | Only you                  | No                 | A mark next to the line, a short description in the bookmarks |
+| **Scratch file or notes app**    | Only you                  | No                 | Somewhere else, away from the code                            |
+| **Review comment**               | Your team                 | No                 | On the code hosting site, next to one change                  |
+
+- **Compared with a comment,** an invisible note changes no file. It can't be committed by accident, it doesn't show
+  up in a diff as a change, and it doesn't shift the line numbers.
+- **Compared with a bookmark,** an invisible note holds the text itself, in as many lines as you need, and you
+  read it in the code, where you'd read a comment.
+- **Compared with notes kept elsewhere,** an invisible note isn't tied to a line number. It remembers the code it
+  belongs to, so it's still on the right line after you edit, pull changes or switch branches. See
+  [How notes follow your code](/invisible-notes/guides/following-code/).
+
+## When something else fits better
+
+- **Your team should read it.** Invisible notes can't be shared. Write a code comment or a review comment.
+- **You want the same notes on several computers.** Notes aren't synced. They're stored in a folder on one
+  computer, which you can [copy yourself](/invisible-notes/guides/storage/#backing-up).
+- **You don't use a JetBrains IDE.** Invisible Notes doesn't run in other editors, such as VS Code.
+- **The note is about a file outside your project,** such as a library or a scratch file. Those can't have notes.
+- **It's a long text that isn't about one line,** such as a design document. That belongs in a file of its own.
+
+## The facts in short
+
+- **IDEs:** JetBrains IDEs from version 2025.2: PhpStorm, IntelliJ IDEA, WebStorm, PyCharm, GoLand, RubyMine,
+  CLion, Rider, RustRover and others. See [Which IDEs does it support?](/invisible-notes/reference/faq/#which-ides-does-it-support)
+- **Languages:** any file of your project, whatever its language.
+- **Privacy:** notes are stored on your computer, outside the project, and the plugin makes no network
+  connections. See [Privacy](/invisible-notes/licensing/privacy/).
+- **Price:** a paid plugin with a free 30-day trial. See [Pricing and trial](/invisible-notes/licensing/pricing/).
+- **Where to get it:** [Invisible Notes on JetBrains Marketplace](https://plugins.jetbrains.com/plugin/34596-invisible-notes),
+  or from inside the IDE. See [Installation](/invisible-notes/getting-started/installation/).
